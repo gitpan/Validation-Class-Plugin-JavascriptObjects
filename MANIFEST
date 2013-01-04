@@ -1,0 +1,9 @@
+CHANGES
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+README.mkdn
+lib/Validation/Class/Plugin/JavascriptObjects.pm
+t/00-load.t

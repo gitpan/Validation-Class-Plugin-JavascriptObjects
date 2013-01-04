@@ -1,0 +1,82 @@
+# NAME
+
+Validation::Class::Plugin::JavascriptObjects - Generate Javascript Objects from you Validation Classes
+
+# VERSION
+
+version 0.01
+
+# SYNOPSIS
+
+    # THIS PLUGIN IS UNTESTED AND MAY BE SUBJECT TO DESIGN CHANGES!!!
+
+    use Validation::Class::Simple;
+
+    # given
+
+    my $rules = Validation::Class::Simple->new(
+        fields => {
+            username => { required => 1 },
+            password => { required => 1 },
+        }
+    );
+
+    # when
+
+    my $objects = $rules->plugin('javascript_objects');
+
+    print $objects->render(namespace => 'signup', include => [qw/name errors/]);
+
+    # should output
+
+    var signup = {
+        "password": {
+            "errors": ["password is required"],
+            "name": "password"
+        },
+        "username": {
+            "errors": ["username is required"],
+            "name": "username"
+        }
+    };
+
+# DESCRIPTION
+
+Validation::Class::Plugin::JavascriptObjects is a plugin for [Validation::Class](http://search.cpan.org/perldoc?Validation::Class)
+which can leverage your validation class field definitions to render JavaScript
+objects for the purpose of introspection.
+
+# METHODS
+
+## render
+
+The render method converts the attached validation class into a javascript
+object for introspection purposes. This method accepts a list of key/value pairs
+as options.
+
+    $self->render;
+
+    # or
+
+    $self->render(
+        namespace => 'Foo.Bar',
+        exclude   => [qw/pattern/]
+    );
+
+    # or
+
+    $self->render(
+        namespace => 'Foo.Baz',
+        include   => [qw/minlength maxlength required/]
+    );
+
+# AUTHOR
+
+Al Newkirk <anewkirk@ana.io>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by Al Newkirk.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
