@@ -1,5 +1,9 @@
 Revision history for the Perl library Validation::Class::Plugin::JavascriptObjects
 
+0.02  2013-01-04
+
+  -  Fixed bug where fields with coderefs cause a crash
+
 0.01  2013-01-04
 
   -  I was born, I exist

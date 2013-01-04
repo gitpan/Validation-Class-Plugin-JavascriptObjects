@@ -9,7 +9,7 @@ use JSON -convert_blessed_universally;
 
 use Validation::Class::Util;
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 
 sub new {
@@ -50,8 +50,12 @@ sub render {
 
     foreach my $field ($model->fields->values) {
 
+        my %data = map {
+            # automatically excludes validation, etc
+            isa_coderef($field->{$_}) ? () : ($_ => $field->{$_})
+        }   $field->keys;
+
         my $name = $field->name;
-        my %data = map { $_ => $field->$_ } $field->keys;
 
         if (isa_arrayref $options{include}) {
             %data = map { $_ => $data{$_} } @{$options{include}};
@@ -92,7 +96,7 @@ Validation::Class::Plugin::JavascriptObjects - Generate Javascript Objects from 
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -113,18 +117,16 @@ version 0.01
 
     my $objects = $rules->plugin('javascript_objects');
 
-    print $objects->render(namespace => 'signup', include => [qw/name errors/]);
+    print $objects->render(namespace => 'form.signup', include => [qw/errors/]);
 
     # should output
 
-    var signup = {
+    var form.signup = {
         "password": {
-            "errors": ["password is required"],
-            "name": "password"
+            "errors": ["password is required"]
         },
         "username": {
-            "errors": ["username is required"],
-            "name": "username"
+            "errors": ["username is required"]
         }
     };
 

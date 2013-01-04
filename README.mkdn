@@ -4,7 +4,7 @@ Validation::Class::Plugin::JavascriptObjects - Generate Javascript Objects from 
 
 # VERSION
 
-version 0.01
+version 0.02
 
 # SYNOPSIS
 
@@ -25,18 +25,16 @@ version 0.01
 
     my $objects = $rules->plugin('javascript_objects');
 
-    print $objects->render(namespace => 'signup', include => [qw/name errors/]);
+    print $objects->render(namespace => 'form.signup', include => [qw/errors/]);
 
     # should output
 
-    var signup = {
+    var form.signup = {
         "password": {
-            "errors": ["password is required"],
-            "name": "password"
+            "errors": ["password is required"]
         },
         "username": {
-            "errors": ["username is required"],
-            "name": "username"
+            "errors": ["username is required"]
         }
     };
 
