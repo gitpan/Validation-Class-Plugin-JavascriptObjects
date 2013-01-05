@@ -1,5 +1,9 @@
 Revision history for the Perl library Validation::Class::Plugin::JavascriptObjects
 
+0.03  2013-01-04
+
+  -  Added the ability to limit which fields are use in output
+
 0.02  2013-01-04
 
   -  Fixed bug where fields with coderefs cause a crash

@@ -19,4 +19,4 @@ resources:
   bugtracker: https://github.com/alnewkirk/Validation-Class-Plugin-JavascriptObjects/issues
   homepage: http://search.cpan.org/dist/Validation-Class-Plugin-JavascriptObjects/
   repository: git://github.com/alnewkirk/Validation-Class-Plugin-JavascriptObjects.git
-version: 0.02
+version: 0.03

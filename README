@@ -3,7 +3,7 @@ NAME
     Objects from you Validation Classes
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
         # THIS PLUGIN IS UNTESTED AND MAY BE SUBJECT TO DESIGN CHANGES!!!
@@ -61,6 +61,14 @@ METHODS
 
         $self->render(
             namespace => 'Foo.Baz',
+            include   => [qw/minlength maxlength required/]
+        );
+
+        # or, to also limit the fields output
+
+        $self->render(
+            namespace => 'Foo.Baz',
+            fields    => [qw/this that/],
             include   => [qw/minlength maxlength required/]
         );
 

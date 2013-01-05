@@ -9,7 +9,7 @@ use JSON -convert_blessed_universally;
 
 use Validation::Class::Util;
 
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 
 sub new {
@@ -48,7 +48,12 @@ sub render {
 
     $next = $next->{$_} = {} for split /\W+/, $namespace;
 
-    foreach my $field ($model->fields->values) {
+    my @fields = isa_arrayref($options{fields}) ?
+        map { $model->fields->get($_) || () } @{$options{fields}} :
+        $model->fields->values
+    ;
+
+    foreach my $field (@fields) {
 
         my %data = map {
             # automatically excludes validation, etc
@@ -96,7 +101,7 @@ Validation::Class::Plugin::JavascriptObjects - Generate Javascript Objects from 
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -157,6 +162,14 @@ as options.
 
     $self->render(
         namespace => 'Foo.Baz',
+        include   => [qw/minlength maxlength required/]
+    );
+
+    # or, to also limit the fields output
+
+    $self->render(
+        namespace => 'Foo.Baz',
+        fields    => [qw/this that/],
         include   => [qw/minlength maxlength required/]
     );
 
