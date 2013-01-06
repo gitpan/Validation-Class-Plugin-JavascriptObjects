@@ -1,4 +1,4 @@
-# ABSTRACT: Generate Javascript Objects from you Validation Classes
+# ABSTRACT: Javascript Object Rendering for Validation::Class
 
 package Validation::Class::Plugin::JavascriptObjects;
 
@@ -9,7 +9,7 @@ use JSON -convert_blessed_universally;
 
 use Validation::Class::Util;
 
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 
 sub new {
@@ -97,11 +97,11 @@ __END__
 
 =head1 NAME
 
-Validation::Class::Plugin::JavascriptObjects - Generate Javascript Objects from you Validation Classes
+Validation::Class::Plugin::JavascriptObjects - Javascript Object Rendering for Validation::Class
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 

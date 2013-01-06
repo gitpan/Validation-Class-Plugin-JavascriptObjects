@@ -1,9 +1,9 @@
 NAME
-    Validation::Class::Plugin::JavascriptObjects - Generate Javascript
-    Objects from you Validation Classes
+    Validation::Class::Plugin::JavascriptObjects - Javascript Object
+    Rendering for Validation::Class
 
 VERSION
-    version 0.03
+    version 0.04
 
 SYNOPSIS
         # THIS PLUGIN IS UNTESTED AND MAY BE SUBJECT TO DESIGN CHANGES!!!

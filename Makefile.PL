@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Generate Javascript Objects from you Validation Classes",
+  "ABSTRACT" => "Javascript Object Rendering for Validation::Class",
   "AUTHOR" => "Al Newkirk <anewkirk\@ana.io>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
     "JSON" => 0,
     "Validation::Class" => 0
   },
-  "VERSION" => "0.03",
+  "VERSION" => "0.04",
   "test" => {
     "TESTS" => "t/*.t"
   }
