@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
     "JSON" => 0,
     "Validation::Class" => 0
   },
-  "VERSION" => "0.04",
+  "VERSION" => "7.900020",
   "test" => {
     "TESTS" => "t/*.t"
   }

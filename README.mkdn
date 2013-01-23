@@ -4,7 +4,7 @@ Validation::Class::Plugin::JavascriptObjects - Javascript Object Rendering for V
 
 # VERSION
 
-version 0.04
+version 7.900020
 
 # SYNOPSIS
 

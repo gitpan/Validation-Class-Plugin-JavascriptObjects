@@ -9,7 +9,7 @@ use JSON -convert_blessed_universally;
 
 use Validation::Class::Util;
 
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '7.900020'; # VERSION
 
 
 sub new {
@@ -101,7 +101,7 @@ Validation::Class::Plugin::JavascriptObjects - Javascript Object Rendering for V
 
 =head1 VERSION
 
-version 0.04
+version 7.900020
 
 =head1 SYNOPSIS
 
