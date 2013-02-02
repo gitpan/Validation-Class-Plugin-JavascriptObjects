@@ -9,7 +9,7 @@ use JSON -convert_blessed_universally;
 
 use Validation::Class::Util;
 
-our $VERSION = '7.900020'; # VERSION
+our $VERSION = '7.900021'; # VERSION
 
 
 sub new {
@@ -101,13 +101,14 @@ Validation::Class::Plugin::JavascriptObjects - Javascript Object Rendering for V
 
 =head1 VERSION
 
-version 7.900020
+version 7.900021
 
 =head1 SYNOPSIS
 
-    # THIS PLUGIN IS UNTESTED AND MAY BE SUBJECT TO DESIGN CHANGES!!!
+    # this plugin is in working condition but untested!!!
 
     use Validation::Class::Simple;
+    use Validation::Class::Plugin::JavascriptObjects;
 
     # given
 
@@ -124,7 +125,7 @@ version 7.900020
 
     print $objects->render(namespace => 'form.signup', include => [qw/errors/]);
 
-    # should output
+    # then, output should be ...
 
     var form.signup = {
         "password": {

@@ -3,12 +3,13 @@ NAME
     Rendering for Validation::Class
 
 VERSION
-    version 7.900020
+    version 7.900021
 
 SYNOPSIS
-        # THIS PLUGIN IS UNTESTED AND MAY BE SUBJECT TO DESIGN CHANGES!!!
+        # this plugin is in working condition but untested!!!
 
         use Validation::Class::Simple;
+        use Validation::Class::Plugin::JavascriptObjects;
 
         # given
 
@@ -25,7 +26,7 @@ SYNOPSIS
 
         print $objects->render(namespace => 'form.signup', include => [qw/errors/]);
 
-        # should output
+        # then, output should be ...
 
         var form.signup = {
             "password": {
